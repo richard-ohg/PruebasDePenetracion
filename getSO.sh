@@ -33,6 +33,12 @@ if [ -z $IP ]
 
 TTL=`ping $IP -c 1 | grep ttl | cut -d ' ' -f 6 | cut -d '=' -f 2`
 
+if [ -z $TTL ]
+then 
+	echo "No se pudo mandar ping"
+	exit
+fi
+
 if [ $TTL -le 64 ]
 then
 	echo "Es un linux"
