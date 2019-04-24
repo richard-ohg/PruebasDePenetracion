@@ -1,0 +1,7 @@
+* Investigar en qué consiste un ataque de pass-the-hash.
+
+El ataque Pass-the-Hash utiliza utiliza una técnica en la cual un atacante captura las credenciales de inicio de sesión en un equipo y después utiliza esas credenciales para autenticarse en otros equipos de la red. Cabe mencionar que un ataque de PTH es muy similar en concepto a un ataque de robo de contraseñas, no obstante se basa en el robo y la reutilización de los valores hash de la contraseña, en lugar de la contraseña en texto plano.
+
+Una vez obtenido el usuario y hash, podemos autenticarnos en diversos servicios, como por ejemplo kerberos. Otro ejemplo es una versión del navegador Mozilla Firefox que permite introducir hashes en lugar de contraseñas para realizar autenticación NTLM en servicios que así lo requieran, únicamente activando una opción de la configuración.
+
+Además de no utilizar solamente Metasploit para explotar esta vulnerabilidad, en el mismo repositorio, los autores de la charla han parcheado algunas otras aplicaciones para permitir introducir hashes como contraseñas en caso de requerir autenticación NTLM, como por ejemplo, el cliente web por consola curl o la propia libreria libcurl, además de WMI y WinEXE, clon de psexec. 
